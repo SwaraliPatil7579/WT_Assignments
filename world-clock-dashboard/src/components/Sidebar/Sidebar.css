@@ -1,0 +1,133 @@
+.sidebar {
+  position: fixed;
+  top: 64px;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, #fef9f3 0%, #f5e6d3 100%);
+  border-right: 1px solid #e2d5c5;
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 900;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar.open {
+  width: 240px;
+}
+
+.sidebar.closed {
+  width: 72px;
+}
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 16px 12px;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: none;
+  background: transparent;
+  color: #4a5568;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  position: relative;
+  text-align: left;
+  font-size: 0.95rem;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.sidebar-item:hover {
+  background: rgba(30, 58, 95, 0.06);
+  color: #1e3a5f;
+  transform: translateX(2px);
+}
+
+.sidebar-item.active {
+  background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
+  color: #fef9f3;
+  box-shadow: 0 4px 12px rgba(30, 58, 95, 0.25);
+}
+
+.sidebar-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+}
+
+.sidebar-label {
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+.sidebar.closed .sidebar-label {
+  opacity: 0;
+  width: 0;
+}
+
+.active-indicator {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 24px;
+  background: #3182ce;
+  border-radius: 0 4px 4px 0;
+}
+
+.sidebar-item.active .active-indicator {
+  background: #f5e6d3;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+.sidebar-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #e2d5c5, transparent);
+  margin-bottom: 16px;
+}
+
+.version-info {
+  text-align: center;
+  color: #a0aec0;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    top: 56px;
+  }
+
+  .sidebar.open {
+    width: 200px;
+  }
+
+  .sidebar.closed {
+    width: 0;
+    padding: 0;
+    border: none;
+  }
+}

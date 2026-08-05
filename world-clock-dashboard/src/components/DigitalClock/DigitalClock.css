@@ -1,0 +1,179 @@
+.digital-clock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 20px;
+  background: linear-gradient(145deg, #fef9f3 0%, #f5e6d3 100%);
+  border-radius: 20px;
+  box-shadow: 
+    6px 6px 16px rgba(30, 58, 95, 0.08),
+    -6px -6px 16px rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(226, 213, 197, 0.5);
+}
+
+.digital-time-display {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.time-container {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.digit {
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #1e3a5f;
+  line-height: 1;
+  text-shadow: 2px 2px 4px rgba(30, 58, 95, 0.1);
+  min-width: 1.8ch;
+  text-align: center;
+}
+
+.digit.seconds {
+  font-size: 2.5rem;
+  color: #3182ce;
+}
+
+.separator {
+  font-size: 3rem;
+  color: #a0aec0;
+  animation: blink 1s ease-in-out infinite;
+  line-height: 1;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.period {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #718096;
+  margin-left: 8px;
+  align-self: flex-start;
+  margin-top: 8px;
+}
+
+.day-night-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #fef9f3 0%, #f5e6d3 100%);
+  box-shadow: 
+    3px 3px 8px rgba(30, 58, 95, 0.1),
+    -3px -3px 8px rgba(255, 255, 255, 0.8);
+}
+
+.day-icon {
+  color: #d69e2e;
+  animation: rotate-slow 20s linear infinite;
+}
+
+.night-icon {
+  color: #3182ce;
+  animation: gentle-float 3s ease-in-out infinite;
+}
+
+@keyframes rotate-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes gentle-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+.digital-date {
+  font-size: 1rem;
+  color: #4a5568;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.digital-offset {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+  padding: 6px 14px;
+  background: rgba(30, 58, 95, 0.06);
+  border-radius: 20px;
+}
+
+.offset-label {
+  font-size: 0.75rem;
+  color: #718096;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.offset-value {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1e3a5f;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Compact variant */
+.digital-clock-compact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.digital-time-compact {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.digit-compact {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1e3a5f;
+}
+
+.separator-compact {
+  font-size: 1.2rem;
+  color: #a0aec0;
+}
+
+.period-compact {
+  font-size: 0.7rem;
+  color: #718096;
+  margin-left: 4px;
+}
+
+.offset-compact {
+  font-size: 0.7rem;
+  color: #a0aec0;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+@media (max-width: 768px) {
+  .digit {
+    font-size: 2.5rem;
+  }
+
+  .digit.seconds {
+    font-size: 1.8rem;
+  }
+
+  .separator {
+    font-size: 2rem;
+  }
+}
