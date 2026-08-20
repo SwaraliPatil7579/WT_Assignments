@@ -1,0 +1,170 @@
+.analog-clock-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.analog-clock {
+  position: relative;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #fef9f3 0%, #f5e6d3 100%);
+  box-shadow: 
+    8px 8px 20px rgba(30, 58, 95, 0.12),
+    -8px -8px 20px rgba(255, 255, 255, 0.8),
+    inset 2px 2px 5px rgba(255, 255, 255, 0.5);
+  padding: 8px;
+  transition: all 0.4s ease;
+}
+
+.analog-clock:hover {
+  transform: scale(1.02);
+  box-shadow: 
+    12px 12px 30px rgba(30, 58, 95, 0.15),
+    -12px -12px 30px rgba(255, 255, 255, 0.9);
+}
+
+.analog-clock.night {
+  background: linear-gradient(145deg, #1e3a5f 0%, #2c5282 100%);
+  box-shadow: 
+    8px 8px 20px rgba(30, 58, 95, 0.3),
+    -8px -8px 20px rgba(44, 82, 130, 0.2);
+}
+
+.analog-clock.night .clock-number {
+  color: #f5e6d3;
+}
+
+.analog-clock.night .clock-marker {
+  background: #f5e6d3;
+}
+
+.analog-clock.night .center-dot {
+  background: #f5e6d3;
+}
+
+.clock-face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 3px solid rgba(30, 58, 95, 0.15);
+}
+
+.analog-clock.night .clock-face {
+  border-color: rgba(245, 230, 211, 0.2);
+}
+
+.clock-marker {
+  position: absolute;
+  background: #1e3a5f;
+  border-radius: 2px;
+  transform-origin: center center;
+  left: 50%;
+  opacity: 0.6;
+}
+
+.clock-marker.hour-marker {
+  opacity: 1;
+  background: #2c5282;
+}
+
+.clock-number {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #1e3a5f;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  transform-origin: center center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.clock-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.center-dot {
+  width: 12px;
+  height: 12px;
+  background: #1e3a5f;
+  border-radius: 50%;
+  border: 2px solid #fef9f3;
+  box-shadow: 0 2px 8px rgba(30, 58, 95, 0.3);
+}
+
+.hand {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom center;
+  border-radius: 4px;
+  transition: transform 0.05s cubic-bezier(0.4, 2.08, 0.55, 0.44);
+}
+
+.hour-hand {
+  width: 5px;
+  height: 28%;
+  background: linear-gradient(180deg, #1e3a5f 0%, #2c5282 100%);
+  margin-left: -2.5px;
+  border-radius: 3px;
+}
+
+.minute-hand {
+  width: 3.5px;
+  height: 38%;
+  background: linear-gradient(180deg, #2c5282 0%, #3182ce 100%);
+  margin-left: -1.75px;
+}
+
+.second-hand {
+  width: 2px;
+  height: 42%;
+  background: linear-gradient(180deg, #e53e3e 0%, #fc8181 100%);
+  margin-left: -1px;
+  transition: transform 0.02s linear;
+}
+
+.second-hand::after {
+  content: '';
+  position: absolute;
+  bottom: -15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 20%;
+  background: #e53e3e;
+  border-radius: 2px;
+}
+
+.clock-glass-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.15) 0%,
+    transparent 40%,
+    transparent 60%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  pointer-events: none;
+}
+
+.clock-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4a5568;
+  text-align: center;
+}

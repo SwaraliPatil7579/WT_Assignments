@@ -1,0 +1,45 @@
+export const TIME_ZONES = [
+  { id: 'local', label: 'Local Time', zone: Intl.DateTimeFormat().resolvedOptions().timeZone, city: 'Your Location', country: '' },
+  { id: 'nyc', label: 'New York', zone: 'America/New_York', city: 'New York', country: 'USA' },
+  { id: 'london', label: 'London', zone: 'Europe/London', city: 'London', country: 'UK' },
+  { id: 'paris', label: 'Paris', zone: 'Europe/Paris', city: 'Paris', country: 'France' },
+  { id: 'tokyo', label: 'Tokyo', zone: 'Asia/Tokyo', city: 'Tokyo', country: 'Japan' },
+  { id: 'sydney', label: 'Sydney', zone: 'Australia/Sydney', city: 'Sydney', country: 'Australia' },
+  { id: 'dubai', label: 'Dubai', zone: 'Asia/Dubai', city: 'Dubai', country: 'UAE' },
+  { id: 'singapore', label: 'Singapore', zone: 'Asia/Singapore', city: 'Singapore', country: 'Singapore' },
+  { id: 'mumbai', label: 'Mumbai', zone: 'Asia/Kolkata', city: 'Mumbai', country: 'India' },
+  { id: 'shanghai', label: 'Shanghai', zone: 'Asia/Shanghai', city: 'Shanghai', country: 'China' },
+  { id: 'moscow', label: 'Moscow', zone: 'Europe/Moscow', city: 'Moscow', country: 'Russia' },
+  { id: 'berlin', label: 'Berlin', zone: 'Europe/Berlin', city: 'Berlin', country: 'Germany' },
+  { id: 'toronto', label: 'Toronto', zone: 'America/Toronto', city: 'Toronto', country: 'Canada' },
+  { id: 'saopaulo', label: 'São Paulo', zone: 'America/Sao_Paulo', city: 'São Paulo', country: 'Brazil' },
+  { id: 'cairo', label: 'Cairo', zone: 'Africa/Cairo', city: 'Cairo', country: 'Egypt' },
+  { id: 'johannesburg', label: 'Johannesburg', zone: 'Africa/Johannesburg', city: 'Johannesburg', country: 'South Africa' },
+  { id: 'seoul', label: 'Seoul', zone: 'Asia/Seoul', city: 'Seoul', country: 'South Korea' },
+  { id: 'bangkok', label: 'Bangkok', zone: 'Asia/Bangkok', city: 'Bangkok', country: 'Thailand' },
+  { id: 'istanbul', label: 'Istanbul', zone: 'Europe/Istanbul', city: 'Istanbul', country: 'Turkey' },
+  { id: 'mexico', label: 'Mexico City', zone: 'America/Mexico_City', city: 'Mexico City', country: 'Mexico' },
+];
+
+export const DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+export const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+export const COLORS = {
+  primary: '#1e3a5f',
+  primaryLight: '#2c5282',
+  primaryDark: '#152a45',
+  accent: '#3182ce',
+  accentLight: '#63b3ed',
+  cream: '#fef9f3',
+  creamDark: '#f5e6d3',
+  creamDarker: '#e8d5c0',
+  text: '#2d3748',
+  textLight: '#4a5568',
+  textMuted: '#718096',
+  border: '#e2d5c5',
+  success: '#38a169',
+  warning: '#d69e2e',
+  danger: '#e53e3e',
+  glass: 'rgba(254, 249, 243, 0.85)',
+  glassDark: 'rgba(30, 58, 95, 0.1)',
+};
