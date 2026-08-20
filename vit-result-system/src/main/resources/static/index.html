@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vishwakarma Institute of Technology &middot; Semester Result Register</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<header class="masthead">
+  <div class="masthead__inner">
+    <div class="crest" aria-hidden="true">
+      <svg viewBox="0 0 60 60" width="44" height="44">
+        <circle cx="30" cy="30" r="27" fill="none" stroke="var(--brass)" stroke-width="2"/>
+        <circle cx="30" cy="30" r="21" fill="none" stroke="var(--brass)" stroke-width="1"/>
+        <text x="30" y="37" text-anchor="middle" font-family="Fraunces, serif" font-size="20" fill="var(--brass)">VIT</text>
+      </svg>
+    </div>
+    <div>
+      <p class="eyebrow">Vishwakarma Institute of Technology</p>
+      <h1>Semester Result Register</h1>
+    </div>
+  </div>
+  <nav class="tabs" role="tablist">
+    <button class="tab active" data-tab="lookup" role="tab" aria-selected="true">Look Up Result</button>
+    <button class="tab" data-tab="admin" role="tab" aria-selected="false">Faculty Entry</button>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ============ LOOKUP PANEL ============ -->
+  <section id="panel-lookup" class="panel active">
+
+    <div class="search-card">
+      <p class="ledger-label">01 &mdash; Retrieve Marksheet</p>
+      <form id="lookup-form" class="search-row">
+        <input id="regNoInput" type="text" placeholder="Registration Number, e.g. 21BCE1234" autocomplete="off" required>
+        <button type="submit" class="btn btn--brass">Fetch Result</button>
+      </form>
+      <p class="hint">Try the seeded demo records: <button type="button" class="chip" data-fill="21BCE1234">21BCE1234</button><button type="button" class="chip" data-fill="21BCE5678">21BCE5678</button><button type="button" class="chip" data-fill="21BEC9012">21BEC9012</button></p>
+      <p id="lookup-error" class="error-msg" hidden></p>
+    </div>
+
+    <div id="result-wrap" hidden>
+
+      <div class="result-header">
+        <div class="student-block">
+          <p class="ledger-label">02 &mdash; Candidate</p>
+          <h2 id="stuName">&mdash;</h2>
+          <p class="student-meta">
+            <span id="stuReg">&mdash;</span> &nbsp;&bull;&nbsp;
+            <span id="stuBranch">&mdash;</span> &nbsp;&bull;&nbsp;
+            Semester <span id="stuSem">&mdash;</span>
+          </p>
+        </div>
+
+        <div class="seal" id="seal">
+          <svg viewBox="0 0 160 160" width="140" height="140">
+            <circle cx="80" cy="80" r="74" class="seal-ring-outer"/>
+            <circle cx="80" cy="80" r="62" class="seal-ring-inner"/>
+            <circle cx="80" cy="80" r="62" class="seal-dots"/>
+          </svg>
+          <div class="seal-content">
+            <span class="seal-grade" id="sealGrade">&mdash;</span>
+            <span class="seal-pct" id="sealPct">&mdash;</span>
+            <span class="seal-status" id="sealStatus">&mdash;</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="ledger-label">03 &mdash; Subject-wise Ledger</p>
+      <div class="table-wrap">
+        <table class="ledger" id="marksTable">
+          <thead>
+            <tr>
+              <th class="col-code">Code</th>
+              <th class="col-name">Subject</th>
+              <th class="num">Credits</th>
+              <th class="num">MSE<br><small>/50 &rarr; 30%</small></th>
+              <th class="num">ESE<br><small>/100 &rarr; 70%</small></th>
+              <th class="num">Total<br><small>/100</small></th>
+              <th class="num">Grade</th>
+            </tr>
+          </thead>
+          <tbody id="marksBody"></tbody>
+        </table>
+      </div>
+
+      <div class="summary-strip">
+        <div class="summary-item">
+          <span class="summary-label">Marks Obtained</span>
+          <span class="summary-value" id="sumObtained">&mdash;</span>
+        </div>
+        <div class="summary-item">
+          <span class="summary-label">Overall Percentage</span>
+          <span class="summary-value" id="sumPct">&mdash;</span>
+        </div>
+        <div class="summary-item">
+          <span class="summary-label">SGPA</span>
+          <span class="summary-value" id="sumSgpa">&mdash;</span>
+        </div>
+        <div class="summary-item">
+          <span class="summary-label">Result</span>
+          <span class="summary-value" id="sumResult">&mdash;</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ ADMIN PANEL ============ -->
+  <section id="panel-admin" class="panel">
+
+    <div class="admin-grid">
+
+      <div class="search-card">
+        <p class="ledger-label">A &mdash; Register a Student</p>
+        <form id="student-form" class="stack-form">
+          <label>Registration Number
+            <input name="regNo" type="text" placeholder="21BCE1234" required>
+          </label>
+          <label>Full Name
+            <input name="name" type="text" placeholder="Student name" required>
+          </label>
+          <label>Branch
+            <input name="branch" type="text" placeholder="Computer Science and Engineering">
+          </label>
+          <label>Semester
+            <input name="semester" type="number" min="1" max="8" value="3" required>
+          </label>
+          <button type="submit" class="btn btn--outline">Add Student</button>
+        </form>
+        <p id="student-msg" class="form-msg" hidden></p>
+      </div>
+
+      <div class="search-card">
+        <p class="ledger-label">B &mdash; Enter MSE / ESE Marks</p>
+        <form id="marks-form" class="stack-form">
+          <label>Registration Number
+            <input name="regNo" type="text" placeholder="21BCE1234" required>
+          </label>
+          <label>Subject
+            <select name="subjectCode" id="subjectSelect" required></select>
+          </label>
+          <div class="two-col">
+            <label>MSE Marks <small>(out of 50, 30% weight)</small>
+              <input name="mseMarks" type="number" step="0.5" min="0" max="50" required>
+            </label>
+            <label>ESE Marks <small>(out of 100, 70% weight)</small>
+              <input name="eseMarks" type="number" step="0.5" min="0" max="100" required>
+            </label>
+          </div>
+          <button type="submit" class="btn btn--brass">Save Marks</button>
+        </form>
+        <p id="marks-msg" class="form-msg" hidden></p>
+      </div>
+
+    </div>
+
+    <p class="ledger-label" style="margin-top:2.5rem;">C &mdash; Subjects on Record</p>
+    <div class="table-wrap">
+      <table class="ledger" id="subjectsTable">
+        <thead><tr><th class="col-code">Code</th><th class="col-name">Subject</th><th class="num">Credits</th></tr></thead>
+        <tbody id="subjectsBody"></tbody>
+      </table>
+    </div>
+
+  </section>
+
+</main>
+
+<footer>
+  <p>Weightage policy: MSE contributes 30% (scaled from /50) &middot; ESE contributes 70% (scaled from /100) &middot; Pass mark 50/100 per subject.</p>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
