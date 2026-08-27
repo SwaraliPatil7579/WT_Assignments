@@ -1,173 +1,375 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vishwakarma Institute of Technology &middot; Semester Result Register</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vishwakarma Institute of Technology &middot; Semester Result Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<div class="grain"></div>
+<div class="ambient-glow" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
 
+<!-- ============ HEADER ============ -->
 <header class="masthead">
-  <div class="masthead__inner">
-    <div class="crest" aria-hidden="true">
-      <svg viewBox="0 0 60 60" width="44" height="44">
-        <circle cx="30" cy="30" r="27" fill="none" stroke="var(--brass)" stroke-width="2"/>
-        <circle cx="30" cy="30" r="21" fill="none" stroke="var(--brass)" stroke-width="1"/>
-        <text x="30" y="37" text-anchor="middle" font-family="Fraunces, serif" font-size="20" fill="var(--brass)">VIT</text>
-      </svg>
+  <div class="masthead__top">
+    <div class="brand-wrapper">
+      <div class="crest-badge" aria-hidden="true">
+        <svg viewBox="0 0 60 60" width="42" height="42">
+          <circle cx="30" cy="30" r="27" fill="none" stroke="var(--brass)" stroke-width="2"/>
+          <circle cx="30" cy="30" r="21" fill="none" stroke="var(--brass)" stroke-width="1" stroke-dasharray="2 3"/>
+          <text x="30" y="36" text-anchor="middle" font-family="Fraunces, serif" font-size="17" font-weight="700" fill="var(--brass)">VIT</text>
+        </svg>
+      </div>
+      <div class="brand-text">
+        <p class="eyebrow">
+          <span>Vishwakarma Institute of Technology</span>
+          <span class="badge-tag">Autonomous</span>
+        </p>
+        <h1>Semester Result Register</h1>
+      </div>
     </div>
-    <div>
-      <p class="eyebrow">Vishwakarma Institute of Technology</p>
-      <h1>Semester Result Register</h1>
+
+    <div class="header-controls">
+      <div class="system-status">
+        <span class="status-dot"></span>
+        <span id="backend-status-text">Exam Portal Online</span>
+      </div>
+      <button type="button" id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle visual theme">
+        <svg id="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+        </svg>
+        <span id="theme-text">Theme</span>
+      </button>
     </div>
   </div>
-  <nav class="tabs" role="tablist">
-    <button class="tab active" data-tab="lookup" role="tab" aria-selected="true">Look Up Result</button>
-    <button class="tab" data-tab="admin" role="tab" aria-selected="false">Faculty Entry</button>
+
+  <nav class="tabs-nav" aria-label="Main Navigation">
+    <div class="tabs-list" role="tablist">
+      <button class="tab-btn active" data-tab="lookup" role="tab" aria-selected="true" id="tab-lookup-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+        </svg>
+        <span>Candidate Result Lookup</span>
+      </button>
+      <button class="tab-btn" data-tab="admin" role="tab" aria-selected="false" id="tab-admin-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+        </svg>
+        <span>Faculty & Grade Entry</span>
+      </button>
+    </div>
   </nav>
 </header>
 
+<!-- ============ MAIN CONTENT ============ -->
 <main>
 
-  <!-- ============ LOOKUP PANEL ============ -->
-  <section id="panel-lookup" class="panel active">
+  <!-- ==================== LOOKUP PANEL ==================== -->
+  <section id="panel-lookup" class="panel active" role="tabpanel" aria-labelledby="tab-lookup-btn">
 
-    <div class="search-card">
-      <p class="ledger-label">01 &mdash; Retrieve Marksheet</p>
+    <div class="card card--accent-top">
+      <p class="ledger-label">01 &mdash; Retrieve Official Marksheet</p>
+      
       <form id="lookup-form" class="search-row">
-        <input id="regNoInput" type="text" placeholder="Registration Number, e.g. 21BCE1234" autocomplete="off" required>
-        <button type="submit" class="btn btn--brass">Fetch Result</button>
+        <div class="input-icon-wrapper">
+          <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+          </svg>
+          <input 
+            id="regNoInput" 
+            class="input-styled" 
+            type="text" 
+            placeholder="Enter Student Registration No. (e.g. 21BCE1234)" 
+            autocomplete="off" 
+            required
+            aria-label="Student Registration Number"
+          >
+        </div>
+        <button type="submit" class="btn btn--brass" id="fetch-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+          </svg>
+          <span>Fetch Result</span>
+        </button>
       </form>
-      <p class="hint">Try the seeded demo records: <button type="button" class="chip" data-fill="21BCE1234">21BCE1234</button><button type="button" class="chip" data-fill="21BCE5678">21BCE5678</button><button type="button" class="chip" data-fill="21BEC9012">21BEC9012</button></p>
-      <p id="lookup-error" class="error-msg" hidden></p>
+
+      <div class="demo-chips-strip">
+        <span class="hint-text">Quick Demo Candidates:</span>
+        <button type="button" class="chip-btn" data-fill="21BCE1234" title="Distinction Candidate">
+          <span>21BCE1234</span>
+          <span class="chip-name">(Aarav Sharma)</span>
+        </button>
+        <button type="button" class="chip-btn" data-fill="21BCE5678" title="Backlog Candidate">
+          <span>21BCE5678</span>
+          <span class="chip-name">(Diya Patel)</span>
+        </button>
+        <button type="button" class="chip-btn" data-fill="21BEC9012" title="First Class Candidate">
+          <span>21BEC9012</span>
+          <span class="chip-name">(Rohan Mehta)</span>
+        </button>
+      </div>
+
+      <div id="lookup-error" class="error-alert" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
+        </svg>
+        <span id="lookup-error-text">Registration number not found in register.</span>
+      </div>
     </div>
 
+    <!-- Marksheet Result Display -->
     <div id="result-wrap" hidden>
-
-      <div class="result-header">
-        <div class="student-block">
-          <p class="ledger-label">02 &mdash; Candidate</p>
-          <h2 id="stuName">&mdash;</h2>
-          <p class="student-meta">
-            <span id="stuReg">&mdash;</span> &nbsp;&bull;&nbsp;
-            <span id="stuBranch">&mdash;</span> &nbsp;&bull;&nbsp;
-            Semester <span id="stuSem">&mdash;</span>
-          </p>
+      <div class="marksheet-certificate">
+        
+        <div class="certificate-header">
+          <div class="cert-inst-title">Vishwakarma Institute of Technology, Pune</div>
+          <div class="cert-sub">Autonomous Institute Affiliated to Savitribai Phule Pune University</div>
+          <div class="cert-sub" style="color:var(--brass-soft); font-weight:600; margin-top:0.4rem;">OFFICIAL SEMESTER GRADE REPORT &middot; AY 2023-2024</div>
         </div>
 
-        <div class="seal" id="seal">
-          <svg viewBox="0 0 160 160" width="140" height="140">
-            <circle cx="80" cy="80" r="74" class="seal-ring-outer"/>
-            <circle cx="80" cy="80" r="62" class="seal-ring-inner"/>
-            <circle cx="80" cy="80" r="62" class="seal-dots"/>
-          </svg>
-          <div class="seal-content">
-            <span class="seal-grade" id="sealGrade">&mdash;</span>
-            <span class="seal-pct" id="sealPct">&mdash;</span>
-            <span class="seal-status" id="sealStatus">&mdash;</span>
+        <div class="candidate-seal-row">
+          <div class="candidate-profile">
+            <div class="candidate-avatar" id="stuAvatar">A</div>
+            <div class="candidate-details">
+              <p class="ledger-label" style="margin-bottom:0.25rem;">Candidate Identity</p>
+              <h2 id="stuName">&mdash;</h2>
+              <div class="candidate-meta-tags">
+                <span class="meta-pill highlight" id="stuReg">&mdash;</span>
+                <span class="meta-pill" id="stuBranch">&mdash;</span>
+                <span class="meta-pill">Semester <strong id="stuSem">&mdash;</strong></span>
+                <span class="meta-pill" id="issueDate">&mdash;</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Official Stamp Seal -->
+          <div class="seal-container" id="seal">
+            <svg class="seal-svg" viewBox="0 0 160 160">
+              <circle cx="80" cy="80" r="74" class="seal-ring-outer"/>
+              <circle cx="80" cy="80" r="62" class="seal-ring-inner"/>
+              <circle cx="80" cy="80" r="62" class="seal-dots"/>
+            </svg>
+            <div class="seal-body">
+              <span class="seal-icon-symbol" id="sealIcon">✓</span>
+              <span class="seal-verdict" id="sealStatus">PASS</span>
+              <span class="seal-percent" id="sealPct">00.00%</span>
+            </div>
           </div>
         </div>
-      </div>
 
-      <p class="ledger-label">03 &mdash; Subject-wise Ledger</p>
-      <div class="table-wrap">
-        <table class="ledger" id="marksTable">
-          <thead>
-            <tr>
-              <th class="col-code">Code</th>
-              <th class="col-name">Subject</th>
-              <th class="num">Credits</th>
-              <th class="num">MSE<br><small>/50 &rarr; 30%</small></th>
-              <th class="num">ESE<br><small>/100 &rarr; 70%</small></th>
-              <th class="num">Total<br><small>/100</small></th>
-              <th class="num">Grade</th>
-            </tr>
-          </thead>
-          <tbody id="marksBody"></tbody>
-        </table>
-      </div>
+        <p class="ledger-label">02 &mdash; Subject-wise Evaluation Breakdown</p>
+        
+        <div class="table-responsive-box">
+          <table class="ledger-table" id="marksTable">
+            <thead>
+              <tr>
+                <th style="width: 15%;">Course Code</th>
+                <th style="width: 35%;">Course Title</th>
+                <th class="num" style="width: 10%;">Credits</th>
+                <th class="num" style="width: 13%;">MSE<br><small>/50 (30% scaled)</small></th>
+                <th class="num" style="width: 13%;">ESE<br><small>/100 (70% scaled)</small></th>
+                <th class="num" style="width: 14%;">Total Marks<br><small>out of 100</small></th>
+                <th class="num" style="width: 10%;">Grade</th>
+              </tr>
+            </thead>
+            <tbody id="marksBody">
+              <!-- Rendered via JS -->
+            </tbody>
+          </table>
+        </div>
 
-      <div class="summary-strip">
-        <div class="summary-item">
-          <span class="summary-label">Marks Obtained</span>
-          <span class="summary-value" id="sumObtained">&mdash;</span>
+        <p class="ledger-label">03 &mdash; Performance Summary & Distinction</p>
+        
+        <div class="summary-kpi-grid">
+          <div class="kpi-card">
+            <span class="kpi-label">Cumulative Score</span>
+            <span class="kpi-value" id="sumObtained">&mdash;</span>
+            <span class="kpi-sub">Total Scaled Marks</span>
+          </div>
+          <div class="kpi-card">
+            <span class="kpi-label">Overall Percentage</span>
+            <span class="kpi-value" id="sumPct">&mdash;</span>
+            <span class="kpi-sub">Scale: 100%</span>
+          </div>
+          <div class="kpi-card">
+            <span class="kpi-label">SGPA</span>
+            <span class="kpi-value" id="sumSgpa">&mdash;</span>
+            <span class="kpi-sub">Credit-Weighted Point</span>
+          </div>
+          <div class="kpi-card">
+            <span class="kpi-label">Result Classification</span>
+            <span class="kpi-value" id="sumResult">&mdash;</span>
+            <span class="kpi-sub" id="sumClassTitle">Official Standing</span>
+          </div>
         </div>
-        <div class="summary-item">
-          <span class="summary-label">Overall Percentage</span>
-          <span class="summary-value" id="sumPct">&mdash;</span>
-        </div>
-        <div class="summary-item">
-          <span class="summary-label">SGPA</span>
-          <span class="summary-value" id="sumSgpa">&mdash;</span>
-        </div>
-        <div class="summary-item">
-          <span class="summary-label">Result</span>
-          <span class="summary-value" id="sumResult">&mdash;</span>
-        </div>
-      </div>
 
+        <!-- Marksheet Actions Bar -->
+        <div class="marksheet-actions">
+          <button type="button" class="btn btn--brass" id="print-marksheet-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6.72 13.829c-.24.03-.48.062-.72.096m.72-.096a42.415 42.415 0 0 1 10.56 0m-10.56 0L6.34 18m10.94-4.171c.24.03.48.062.72.096m-.72-.096L17.66 18m0 0 .229 2.523a1.125 1.125 0 0 1-1.12 1.227H7.231c-.662 0-1.18-.568-1.12-1.227L6.34 18m11.318 0h1.091A2.25 2.25 0 0 0 21 15.75V9.456c0-1.081-.768-2.015-1.837-2.175a48.055 48.055 0 0 0-1.913-.247M6.34 18H5.25A2.25 2.25 0 0 1 3 15.75V9.456c0-1.081.768-2.015 1.837-2.175a48.041 48.041 0 0 1 1.913-.247m10.5 0a48.536 48.536 0 0 0-10.5 0m10.5 0V3.375c0-.621-.504-1.125-1.125-1.125h-8.25c-.621 0-1.125.504-1.125 1.125v3.659M18 10.5h.008v.008H18V10.5Zm-3 0h.008v.008H15V10.5Z" />
+            </svg>
+            <span>Print Official Marksheet</span>
+          </button>
+          
+          <button type="button" class="btn btn--outline" id="copy-summary-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.666 3.888A2.25 2.25 0 0 0 13.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 0 1-.75.75H9a.75.75 0 0 1-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 0 1-2.25 2.25H6.75A2.25 2.25 0 0 1 4.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 0 1 1.927-.184" />
+            </svg>
+            <span>Copy Result Summary</span>
+          </button>
+        </div>
+
+        <!-- Print-only signature section -->
+        <div class="print-footer-signature">
+          <div>
+            <p>Generated On: <span class="print-date"></span></p>
+            <p>System Verifier: Examination Cell Auto-System</p>
+          </div>
+          <div style="text-align: right;">
+            <p>_____________________________</p>
+            <p><strong>Controller of Examinations</strong></p>
+            <p>Vishwakarma Institute of Technology</p>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
-  <!-- ============ ADMIN PANEL ============ -->
-  <section id="panel-admin" class="panel">
 
-    <div class="admin-grid">
+  <!-- ==================== ADMIN & FACULTY PANEL ==================== -->
+  <section id="panel-admin" class="panel" role="tabpanel" aria-labelledby="tab-admin-btn">
 
-      <div class="search-card">
-        <p class="ledger-label">A &mdash; Register a Student</p>
-        <form id="student-form" class="stack-form">
-          <label>Registration Number
-            <input name="regNo" type="text" placeholder="21BCE1234" required>
-          </label>
-          <label>Full Name
-            <input name="name" type="text" placeholder="Student name" required>
-          </label>
-          <label>Branch
-            <input name="branch" type="text" placeholder="Computer Science and Engineering">
-          </label>
-          <label>Semester
-            <input name="semester" type="number" min="1" max="8" value="3" required>
-          </label>
-          <button type="submit" class="btn btn--outline">Add Student</button>
+    <div class="admin-grid-layout">
+
+      <!-- Register Candidate Form -->
+      <div class="card card--accent-top">
+        <p class="ledger-label">A &mdash; Register New Candidate</p>
+        
+        <form id="student-form" class="form-stack">
+          <div class="form-group">
+            <label for="newRegNo">Registration Number *</label>
+            <input id="newRegNo" name="regNo" class="input-styled" type="text" placeholder="e.g. 21BCE2045" required>
+          </div>
+
+          <div class="form-group">
+            <label for="newName">Full Name of Student *</label>
+            <input id="newName" name="name" class="input-styled" type="text" placeholder="e.g. Priya Deshmukh" required>
+          </div>
+
+          <div class="form-group">
+            <label for="newBranch">Academic Branch / Department</label>
+            <input id="newBranch" name="branch" class="input-styled" type="text" placeholder="Computer Science and Engineering" value="Computer Science and Engineering">
+          </div>
+
+          <div class="form-group">
+            <label for="newSem">Semester (1 to 8) *</label>
+            <input id="newSem" name="semester" class="input-styled" type="number" min="1" max="8" value="3" required>
+          </div>
+
+          <button type="submit" class="btn btn--brass">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z" />
+            </svg>
+            <span>Register Candidate</span>
+          </button>
         </form>
-        <p id="student-msg" class="form-msg" hidden></p>
+
+        <div id="student-msg" class="form-alert" hidden></div>
       </div>
 
-      <div class="search-card">
-        <p class="ledger-label">B &mdash; Enter MSE / ESE Marks</p>
-        <form id="marks-form" class="stack-form">
-          <label>Registration Number
-            <input name="regNo" type="text" placeholder="21BCE1234" required>
-          </label>
-          <label>Subject
-            <select name="subjectCode" id="subjectSelect" required></select>
-          </label>
-          <div class="two-col">
-            <label>MSE Marks <small>(out of 50, 30% weight)</small>
-              <input name="mseMarks" type="number" step="0.5" min="0" max="50" required>
-            </label>
-            <label>ESE Marks <small>(out of 100, 70% weight)</small>
-              <input name="eseMarks" type="number" step="0.5" min="0" max="100" required>
-            </label>
+      <!-- Record Subject Marks Form -->
+      <div class="card card--accent-top">
+        <p class="ledger-label">B &mdash; Record MSE &amp; ESE Marks</p>
+        
+        <form id="marks-form" class="form-stack">
+          <div class="form-group">
+            <label for="marksRegNo">Registration Number *</label>
+            <input id="marksRegNo" name="regNo" class="input-styled" type="text" placeholder="e.g. 21BCE1234" required>
           </div>
-          <button type="submit" class="btn btn--brass">Save Marks</button>
+
+          <div class="form-group">
+            <label for="subjectSelect">Select Course / Subject *</label>
+            <select name="subjectCode" id="subjectSelect" class="input-styled" required>
+              <option value="">Loading course catalog...</option>
+            </select>
+          </div>
+
+          <div class="form-grid-2col">
+            <div class="form-group">
+              <label for="inputMse">MSE Marks <small>(Max 50 &bull; 30%)</small> *</label>
+              <input id="inputMse" name="mseMarks" class="input-styled" type="number" step="0.5" min="0" max="50" placeholder="0.0 - 50.0" required>
+            </div>
+            <div class="form-group">
+              <label for="inputEse">ESE Marks <small>(Max 100 &bull; 70%)</small> *</label>
+              <input id="inputEse" name="eseMarks" class="input-styled" type="number" step="0.5" min="0" max="100" placeholder="0.0 - 100.0" required>
+            </div>
+          </div>
+
+          <!-- Live Dynamic Computation Preview -->
+          <div class="live-calc-box">
+            <div>
+              <span class="calc-formula-text">Computed Weighted Total (/100):</span>
+              <div id="calcFormulaBreakdown" style="font-size:0.75rem; color:var(--text-muted);">MSE: 0.0 + ESE: 0.0</div>
+            </div>
+            <div class="calc-preview-badge">
+              <span class="calc-total-num" id="calcTotalPreview">0.00</span>
+              <span class="grade-badge grade-f" id="calcGradePreview">F</span>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn--brass">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10.125 2.25h-4.5c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125v-9M10.125 2.25h.375a9 9 0 0 1 9 9v.375M10.125 2.25A3.375 3.375 0 0 1 13.5 5.625v1.5c0 .621.504 1.125 1.125 1.125h1.5a3.375 3.375 0 0 1 3.375 3.375M9 15l2.25 2.25L15 12" />
+            </svg>
+            <span>Commit / Update Marks</span>
+          </button>
         </form>
-        <p id="marks-msg" class="form-msg" hidden></p>
+
+        <div id="marks-msg" class="form-alert" hidden></div>
       </div>
 
     </div>
 
-    <p class="ledger-label" style="margin-top:2.5rem;">C &mdash; Subjects on Record</p>
-    <div class="table-wrap">
-      <table class="ledger" id="subjectsTable">
-        <thead><tr><th class="col-code">Code</th><th class="col-name">Subject</th><th class="num">Credits</th></tr></thead>
-        <tbody id="subjectsBody"></tbody>
+    <!-- Enrolled Candidates Quick Roster -->
+    <p class="ledger-label">C &mdash; Registered Candidates Roster</p>
+    <div class="table-responsive-box" style="margin-bottom: 2.5rem;">
+      <table class="ledger-table" id="studentsTable">
+        <thead>
+          <tr>
+            <th style="width: 20%;">Reg Number</th>
+            <th style="width: 35%;">Student Name</th>
+            <th style="width: 25%;">Branch</th>
+            <th class="num" style="width: 10%;">Semester</th>
+            <th class="num" style="width: 10%;">Action</th>
+          </tr>
+        </thead>
+        <tbody id="studentsBody">
+          <!-- Populated by JS -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Subject Curriculum Catalog -->
+    <p class="ledger-label">D &mdash; Semester Course Curriculum Catalog</p>
+    <div class="table-responsive-box">
+      <table class="ledger-table" id="subjectsTable">
+        <thead>
+          <tr>
+            <th style="width: 20%;">Course Code</th>
+            <th style="width: 60%;">Course Title</th>
+            <th class="num" style="width: 20%;">Credits Awarded</th>
+          </tr>
+        </thead>
+        <tbody id="subjectsBody">
+          <!-- Populated by JS -->
+        </tbody>
       </table>
     </div>
 
@@ -175,8 +377,22 @@
 
 </main>
 
+<!-- ============ TOAST NOTIFICATIONS ============ -->
+<div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+<!-- ============ FOOTER ============ -->
 <footer>
-  <p>Weightage policy: MSE contributes 30% (scaled from /50) &middot; ESE contributes 70% (scaled from /100) &middot; Pass mark 50/100 per subject.</p>
+  <div class="footer-content">
+    <div>
+      <p><strong>Vishwakarma Institute of Technology, Pune</strong> &middot; Academic Examination Registry</p>
+      <p style="margin-top: 0.2rem;">Evaluation Rules: Minimum 50.00 / 100 per course required to pass.</p>
+    </div>
+    <div class="policy-badges">
+      <span class="policy-tag">MSE: 30% Weightage (/50)</span>
+      <span class="policy-tag">ESE: 70% Weightage (/100)</span>
+      <span class="policy-tag">SGPA: 10-Pt Relative Scale</span>
+    </div>
+  </div>
 </footer>
 
 <script src="js/script.js"></script>
